@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  margin: 10% auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrapper * {
+  margin: 5px;
+}
+
+.res {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+.mainApp {
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+
+}
+
+.centerMe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.mainApp > * {
+  margin: 5px;
+}
+
+.alert {
+  color: darkred;
+}
+
+
+
+label.label input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+
+.label {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 5px;
+  background: #dddddd;
+  display: inline-block;
+}
+
+.label:hover {
+  background: #5cbd95;
+}
+
+.label:active {
+  background: #9fa1a0;
+}
+
+.label:invalid + span {
+  color: #000000;
+}
+
+.label:valid + span {
+  color: #ffffff;
+}
+
+select {
+  appearance: none;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+select::after {
+  content: "▼";
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.subBtn {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 5px;
+  background: #dddddd;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 25px;
+}
+
+.subBtn:hover {
+  background: #5cbd95;
+}
