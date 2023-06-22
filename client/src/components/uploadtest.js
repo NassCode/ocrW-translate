@@ -37,6 +37,7 @@ export default function FileUploadPage() {
   function handleGoBack() {
     setIsproccessing(false);
     setIsFilePicked(false);
+    setIsLoading(true);
     setText("");
   }
 
@@ -96,25 +97,31 @@ export default function FileUploadPage() {
           <ResultPage text={text} isLoading={isLoading} goback={handleGoBack} />
         ) : (
           <form onSubmit={handleSubmission}>
-            <input type="file" name="file" onChange={changeHandler} />
-            {isFilePicked ? (
-              <div>
-                <p>Filename: {selectedFile.name}</p>
-                {/* <p>Filetype: {selectedFile.type}</p> */}
-                {isValid ? null : <p className="alert">{typeError}</p>}
+            <div className="centerMe">
+              
+              {isFilePicked ? (
+                <div>
+                  <p>Filename: {selectedFile.name}</p>
+                  {/* <p>Filetype: {selectedFile.type}</p> */}
+                  {isValid ? null : <p className="alert">{typeError}</p>}
 
-                {/* <p>Size in bytes: {selectedFile.size}</p> */}
-                {isValid ? null : <p className="alert">{sizeError}</p>}
-                
-              </div>
-            ) : (
-              <p>Select a file to show details</p>
-            )}
-            {/* <div>
-        <button onClick={handleSubmission}>Submit</button>
-      </div> */}
+                  {/* <p>Size in bytes: {selectedFile.size}</p> */}
+                  {isValid ? null : <p className="alert">{sizeError}</p>}
+                  
+                </div>
+              ) : (
+                <p>Select a file to show details</p>
+              )}
 
-            <div>
+              <label className="label">
+                <input type="file" name="file" onChange={changeHandler} />
+                Upload file
+              </label>    
+            </div>
+            
+          
+
+            <div className="centerMe">
               <label>Input language: </label>
               <select
                 value={inputLang.inlanguages}
@@ -127,7 +134,7 @@ export default function FileUploadPage() {
               </select>
             </div>
 
-            <div>
+            <div className="centerMe">
               <label>Output language: </label>
               <select
                 value={targetLang.outlanguages}
@@ -138,8 +145,8 @@ export default function FileUploadPage() {
                 <option value="ar">Arabic</option>
               </select>
             </div>
-            <div>
-              <button type="submit">Submit</button>
+            <div className="centerMe">
+              <button className="subBtn" type="submit">Submit</button>
             </div>
           </form>
         )}
